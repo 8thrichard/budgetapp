@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border-radius: 20px;
+}
+
+.App-header h1 {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+body {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+
+span {
+  color: white;
+  font-weight: lighter;
+}
+
+p{
+  color: white;
+}
+.App-content {
+  min-height: 200vh;
+  text-transform: uppercase;
+}
+
+.budget-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+button {
+  background-color: #aed033;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: red;
+}
+
+.budget-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.delete-button {
+  background-color: #cc4d30;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.budget-item span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+.no-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.no-items-message,
+.add-item-message {
+  color: White;
+  margin: 5px 0;
+}
