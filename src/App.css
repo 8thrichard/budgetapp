@@ -19,9 +19,13 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom, #051937, #062344, #052e50, #03395d, #00456a);
-  overflow: auto;
-  background-repeat: no-repeat;
+  background-image: linear-gradient(to right bottom, #051937, #122040, #1d2648, #282d51, #33345a);
+  height:100vh;
+  padding: 0;
+  margin: 0 auto;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
 }
 
 
