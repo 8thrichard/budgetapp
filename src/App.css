@@ -125,10 +125,15 @@ button:hover {
   button {
     margin-top: 15px;
   }
+  .delete-button {
+    margin:auto;
+    scale: 0.9;
+  }
+
 }
 
 
-@media screen and (max-width: 373px) {
+@media screen and (max-width: 373px) and (max-width:431px ){
   .App-header h1 {
     font-size: 22px;
   }
