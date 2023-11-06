@@ -11,15 +11,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
   border-radius: 20px;
+  margin-top: 40px;
 }
 
 .App-header h1 {
   font-size: 35px;
-  text-transform: uppercase;
 }
 
 body {
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-image: linear-gradient(to bottom, #051937, #062344, #052e50, #03395d, #00456a);
+  overflow: auto;
+  background-repeat: no-repeat;
 }
 
 
@@ -103,4 +105,46 @@ button:hover {
 .add-item-message {
   color: White;
   margin: 5px 0;
+}
+
+
+/* Mobile Responsiveness */
+
+/* iPhone SE (1st and 2nd generation) and iPhone 5/5s */
+@media screen and (max-width: 523px) {
+  .App-header h1 {
+    font-size: 25px;
+  }
+}
+
+
+@media screen and (max-width: 432px) {
+  .App-header h1 {
+    font-size: 23px;
+  }
+  button {
+    margin-top: 15px;
+  }
+}
+
+
+@media screen and (max-width: 373px) {
+  .App-header h1 {
+    font-size: 22px;
+  }
+  button {
+    margin-top: 15px;
+  }
+
+  input {
+    display: block;
+    margin-top: 10px;
+  }
+
+
+  .delete-button {
+    margin:auto;
+    scale: 0.9;
+  }
+
 }
