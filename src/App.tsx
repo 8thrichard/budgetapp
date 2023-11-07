@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { transform } from 'typescript';
 
 interface BudgetItem {
   id: number;
@@ -41,7 +42,15 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Budget List App Version 2.0</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#"> Financial Wellness</a></li>
+            <li className='hompage_logo'><a href="app.tsx">Budget List App <span id='appversion'>V</span>3.0</a></li>
+            <li><a href="#">Investing</a></li>
+            <li><a href="#">Saving</a></li>
+          </ul>
+        </nav>
       </header>
       <div className="App-content">
         <div className="budget-controls">
