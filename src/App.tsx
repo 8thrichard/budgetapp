@@ -1,16 +1,22 @@
+// Importing necessary modules from the React and react-router-dom libraries
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+// Importing individual page components
 import Home from './pages/home';
 import FinancialWellness from './pages/FinancialWellness';
 import Saving from './pages/Saving';
 import Investing from './pages/investing';
 
 
+// Functional component representing the main App
 const App = () => {
   return (
+    // Wrapping the entire application in a BrowserRouter to enable routing
     <Router>
       <div className="App">
         <header className="App-header">
+          //Navbar
           <nav>
             <ul>
               <li>
@@ -34,7 +40,8 @@ const App = () => {
           </nav>
         </header>
         <Routes>
-          <Route index element={<Home />} />
+          //Routing Rules
+          <Route index element={<Home />} /> //Index Routing: The first Page to show
           <Route path="/home" element={<Home />} />
           <Route path="/financial-wellness" element={<FinancialWellness />} />
           <Route path="/investing" element={<Investing />} />
@@ -45,4 +52,5 @@ const App = () => {
   );
 };
 
+// Exporting the App component as the default export of this module
 export default App;

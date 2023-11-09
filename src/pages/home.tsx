@@ -8,16 +8,23 @@ interface BudgetItem {
   amount: number;
 }
 
+// Initializing an empty array for initialBudgetItems
 const initialBudgetItems: BudgetItem[] = [];
 
+// Functional component representing the Home page
 const Home: React.FC = () => {
+  // State variables for managing budget items and input fields
   const [budgetItems, setBudgetItems] = useState<BudgetItem[]>([]);
   const [newItemName, setNewItemName] = useState<string>('');
   const [newItemAmount, setNewItemAmount] = useState<number | ''>(''); // '' represents an empty string
 
+  // Function to handle adding a new budget item
   const handleAddItem = () => {
+      // Check if both name and amount are provided
     if (newItemName && newItemAmount !== '') {
       const newItem: BudgetItem = {
+
+      // Create a new budget item
         id: Date.now(),
         name: newItemName,
         amount: +newItemAmount, // Convert the string to a number
@@ -28,17 +35,21 @@ const Home: React.FC = () => {
     }
   };
 
+    // Function to handle Enter key press in the amount input field
   const handleAmountInputKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // If Enter key is pressed, add the item
     if (e.key === 'Enter') {
       handleAddItem();
     }
   };
 
+    // Function to handle deleting a budget item
   const handleDeleteItem = (item: BudgetItem) => {
     const updatedItems = budgetItems.filter(i => i.id !== item.id);
     setBudgetItems(updatedItems);
   };
 
+  // Rendering the Home component
   return (
     <div className="App">
       <div className="App-content">
@@ -90,4 +101,5 @@ const Home: React.FC = () => {
   );
 };
 
+// Exporting the Home component as the default export of this module
 export default Home;
