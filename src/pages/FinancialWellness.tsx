@@ -48,7 +48,6 @@ const FinancialWellness: React.FC = () => {
             Credit cards can be powerful financial tools when used wisely. Understand how to choose the right credit card, manage your credit utilization, and use credit responsibly to build a positive credit history.
             </p>
           </div>
-
         </div>
       </div>
     </div>    

@@ -56,7 +56,7 @@ const App = () => {
                 <Link to="/financial-wellness">Financial Wellness</Link>
               </li>
               <li className="hompage_logo">
-                <a href="app.tsx">
+                <a href="#">
                   Budget List App <span id="appversion">V3.0</span>
                 </a>
               </li>
