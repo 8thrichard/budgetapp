@@ -1,23 +1,35 @@
 .finance-main {
-background: rgba(255, 255, 255, 0.19);
+background: white ;
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(4.8px);
 -webkit-backdrop-filter: blur(4.8px);
 padding: 20px;
 margin: 20px;
-max-width: 700px;
+max-width: 1000px;
 margin: 0 auto;
 -webkit-box-shadow:0px 0px 145px 0px rgba(28,130,158,0.9);
 -moz-box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
 box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
 }
 
+.layout {
+    width: 1000px;
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
 
+.content-container{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 20px;
+}
 
-
-
-
+#content-Paragraph {
+    color: black;
+}
 
 
 /* Responsive Styles */
@@ -25,10 +37,28 @@ box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
     .finance-main {
     max-width: 80%; 
     }
+
+    .layout {
+        width: 1024px;
+        height: auto;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .finance-main {
     max-width: 90%;
+    }
+
+    .layout {
+        width: 360px;
+        height: auto; 
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
     }
 }
