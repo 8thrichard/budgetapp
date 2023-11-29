@@ -1,12 +1,19 @@
-/* Importing Font */
+/* Importing Font (Consider importing in a common location) */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Resetting Default Styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Common Styles */
+* {
+  font-family: montserrat;
+}
 
 .App {
   text-align: center;
-}
-
-* {
-  font-family: montserrat;
 }
 
 .App-header {
@@ -29,7 +36,6 @@ nav {
   top: -40px;
 }
 
-
 ul {
   list-style-type: none;
   display: flex;
@@ -48,17 +54,19 @@ ul a {
   color: white;
 }
 
-
 ul a:hover {
-color: #009EAB;
+  color: #009EAB;
 }
-
 
 header .hompage_logo a {
   display: inline-block;
   height: 55px;
   font-size: 38px;
-  font-weight:bold;
+  font-weight: bold;
+}
+
+.hompage_logo a:hover{
+color: white;
 }
 
 #appversion {
@@ -82,15 +90,15 @@ body {
   text-align: center;
 }
 
-
 span {
   color: white;
   font-weight: lighter;
 }
 
-p{
+p {
   color: white;
 }
+
 .App-content {
   min-height: 200vh;
   text-transform: uppercase;
@@ -108,7 +116,7 @@ input {
   border-radius: 5px;
   padding: 10px;
   margin: 0 10px;
-  background-color:transparent transparent;
+  background-color: transparent transparent;
 }
 
 button {
@@ -125,7 +133,9 @@ button:hover {
   background-color: #009EAB;
 }
 
-button:active { cursor: progress; }
+button:active {
+  cursor: progress;
+}
 
 .budget-list {
   display: flex;
@@ -159,61 +169,101 @@ div.budget-item:active {
   margin-right: 10px;
 }
 
-
 .no-items {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
 .no-items-message,
 .add-item-message {
-  color: White;
+  color: white;
   margin: 5px 0;
 }
 
+/* Mobile Menu Styles */
+.mobile-menu {
+  display: none;
+  list-style-type: none;
+}
 
-/* Mobile Responsiveness */
+.mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  background-color: #1C819E;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+}
 
-/* iPhone SE (1st and 2nd generation) and iPhone 5/5s */
-@media screen and (max-width: 523px) {
-  .App-header h1 {
-    font-size: 25px;
+.mobile-menu li {
+  padding: 10px;
+}
+
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Desktop Menu Styles */
+.desktop-menu {
+  display: flex;
+  list-style-type: none;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1030px) {
+  .hamburger-icon {
+    display: block;
+    font-size: 24px;
+    margin-right: 20px;
+    float: right;
+    margin-top: 9px;
   }
 
-  .App-header h1 {
-    font-size: 23px;
-  }
-  button {
-    margin-top: 15px;
-  }
-  .delete-button {
-    margin:auto;
-    scale: 0.9;
+  .desktop-menu {
+    display: none;
   }
 }
 
+@media screen and (max-width: 523px) {
+  .App-header h1 {
+    font-size: 23px;
+  }
+
+  button {
+    margin-top: 15px;
+  }
+
+  .delete-button {
+    margin: auto;
+    scale: 0.9;
+  }
+}
 
 @media screen and (max-width: 432px) {
   .App-header h1 {
     font-size: 23px;
   }
+
   button {
     margin-top: 15px;
   }
+
   .delete-button {
-    margin:auto;
+    margin: auto;
     scale: 0.9;
   }
-
 }
 
-
-@media screen and (max-width: 373px) and (max-width:431px ){
+@media screen and (max-width: 373px) and (max-width: 431px) {
   .App-header h1 {
     font-size: 22px;
   }
+
   button {
     margin-top: 15px;
   }
@@ -223,10 +273,8 @@ div.budget-item:active {
     margin-top: 10px;
   }
 
-
   .delete-button {
-    margin:auto;
+    margin: auto;
     scale: 0.9;
   }
-
 }

@@ -12,6 +12,14 @@ margin: 0 auto;
 -moz-box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
 box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
 }
+h3{
+    color: #1C819E;
+    margin: 3px;
+}
+
+p{
+    padding: 7px;
+}
 
 .layout {
     width: 1000px;
@@ -19,7 +27,7 @@ box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 10px;
 }
 
 .content-container{
@@ -29,24 +37,47 @@ box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
 
 #content-Paragraph {
     color: black;
+    font-size: 16px;
 }
 
 
 /* Responsive Styles */
+
+@media screen and (max-width: 1030px) { 
+    .finance-main {
+        max-width: 95%; 
+        }
+    
+        .layout {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 1fr; 
+        }
+
+}
 @media screen and (max-width: 768px) {
     .finance-main {
-    max-width: 80%; 
+    max-width: 90%; 
     }
 
     .layout {
-        width: 1024px;
+        width: 100%;
         height: auto;
         display: grid;
         grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
+        grid-template-columns: 1fr; 
     }
 }
+
+@media screen and (max-width: 550px) {
+    .finance-main{
+        position:absolute;
+        top: 60px;
+    }
+}
+    
 
 @media screen and (max-width: 480px) {
     .finance-main {
@@ -54,11 +85,10 @@ box-shadow: 0px 0px 145px 0px rgba(28,130,158,0.9);
     }
 
     .layout {
-        width: 360px;
-        height: auto; 
+        width: 100%;
+        height: auto;
         display: grid;
         grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
+        grid-template-columns: 1fr; 
     }
 }
