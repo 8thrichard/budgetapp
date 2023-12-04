@@ -17,7 +17,7 @@ const NotFound: React.FC = () => {
         style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
       />
       <p style={{ color: 'white', fontSize: '16px' }}>
-        But don't worry, you are in the right place to get financially smart. <br /> Click{' '}
+        You are in the right place to get financially smart. <br /> Click{' '}
         <a
           href="/home"
           style={{
