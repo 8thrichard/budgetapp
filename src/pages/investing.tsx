@@ -1,12 +1,12 @@
+// Investing.tsx
 import React from 'react';
-
-
+import JoinForm from './JoinForm';
 
 const Investing: React.FC = () => {
   return (
-<body>
-    <h1>Hello</h1>
-</body>
+    <div>
+      <JoinForm />
+    </div>
   );
 };
 
