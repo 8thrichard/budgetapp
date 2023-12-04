@@ -1,8 +1,21 @@
-// JoinForm.tsx
 import React, { useState } from 'react';
+import { useMutation, useQueryClient } from 'react-query';
 import '../styles/forms.css';
+import axios from 'axios';
 
 const JoinForm: React.FC = () => {
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(
+    (newSubmission: any) => axios.post('http://localhost:5000/submissions', newSubmission),
+    {
+      onSuccess: () => {
+        // Invalidate and refetch data to update the UI with the new submission
+        queryClient.invalidateQueries('submissions');
+      },
+    }
+  );
+
   const [formData, setFormData] = useState({
     joinFullName: '',
     joinEmailAddress: '',
@@ -14,10 +27,13 @@ const JoinForm: React.FC = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here, e.g., send data to a server or perform local actions
-    console.log('Form submitted:', formData);
+    await mutation.mutateAsync({
+      fullName: formData.joinFullName,
+      emailAddress: formData.joinEmailAddress,
+      userMessage: formData.joinUserMessage,
+    });
   };
 
   return (
@@ -55,7 +71,9 @@ const JoinForm: React.FC = () => {
           />
         </div>
 
-        <button type="submit" className='join-submit-button'>Join Group</button>
+        <button type="submit" className='join-submit-button'>
+          {mutation.isLoading ? 'Submitting...' : 'Join Group'}
+        </button>
       </form>
     </div>
   );
