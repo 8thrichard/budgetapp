@@ -5,6 +5,9 @@ import Home from './pages/home';
 import FinancialWellness from './pages/FinancialWellness';
 import Saving from './pages/Saving';
 import Investing from './pages/investing';
+import NotFound from './pages/NotFound';
+import { NOTFOUND } from 'dns';
+
 
 
 const App = () => {
@@ -76,6 +79,7 @@ const App = () => {
           <Route path="/financial-wellness" element={<FinancialWellness />} />
           <Route path="/investing" element={<Investing />} />
           <Route path="/saving" element={<Saving />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
