@@ -1,0 +1,31 @@
+.stock-data {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: relative;
+    z-index: 5;
+    max-width: 960px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stock-data h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stock-data ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.stock-data li {
+    color: #555;
+}
+  
+.error-message {
+    color: red;
+}

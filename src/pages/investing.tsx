@@ -1,52 +1,55 @@
-// Investing.tsx
 import React, { useEffect, useState } from 'react';
 import JoinForm from './JoinForm';
-import { fetchStockData } from './stockService';
-import '../styles/investing.css'; // Import your CSS file
+import '../styles/investing.css'; 
+import StockData from './StockData';
+
 
 const Investing: React.FC = () => {
-  const [stockData, setStockData] = useState<any | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setError(null); // Reset error state on successful fetch
-
-        const apiKey = 'ICC1VC77FMTFLE61';
-        const symbol = 'MSF';
-
-        const data = await fetchStockData(symbol, apiKey);
-        console.log(data);
-
-        setStockData(data);
-      } catch (error: any) {
-        console.error('Error:', error.message);
-        setError('Failed to fetch stock data'); // Set error state on fetch failure
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
-    <div className="investing-container">
-      <h2>Investing Page</h2>
-      {error && <div className="error-message">{error}</div>}
-      {stockData && (
-        <div className="stock-data">
-          <h3>Stock Data</h3>
-          <ul>
-            <li>{`${stockData['01. symbol']}: $${stockData['05. price']}`}</li>
-          </ul>
-        </div>
-      )}
-      <div className="join-form">
-        <h3>Join Form</h3>
-        <JoinForm />
-      </div>
+    <div>
+            <StockData/>
+         <div className='investing-content'>
+              <h2>Why Invest? Understanding the Importance of Investing</h2>
+              <p>
+                Having a savings account is an essential first step in financial planning, but it's only a part of the larger financial picture. <br />
+                While saving money helps build a financial safety net, investing in the financial markets <br /> becomes crucial after establishing sufficient emergency savings. <br />
+                Here's why investing is important and how it can benefit you:
+              </p>
+              <div className="responsive-container">
+                <h3>Building Wealth:</h3>
+                <p>Invest to make your money work for you and potentially build wealth.</p>
+                <p>Smart investing can outpace inflation, ensuring your money grows in value.</p>
+              </div>
+
+              <div className="responsive-container">
+                <h3>The Power of Compounding:</h3>
+                <p>Reinvest earnings or dividends for exponential growth.</p>
+                <p>Starting early and automatic reinvestment maximize compounding benefits.</p>
+              </div>
+
+              <div className="responsive-container">
+                <h3>Risk-Return Tradeoff:</h3>
+                <p>Different investments offer varied returns and risks.</p>
+                <p>Higher return potential (e.g., stocks) comes with higher risk, while lower risk accompanies lower returns (e.g., savings accounts).</p>
+              </div>
+
+              <div className="responsive-container">
+                <h3>Understanding Risk Tolerance:</h3>
+                <p>Align risk tolerance with financial goals and timeline.</p>
+                <p>Balance risk for growth, considering comfort level.</p>
+              </div>
+
+              <div className="responsive-container">
+                <h3>Beating Inflation:</h3>
+                <p>Investments like stocks historically outperform inflation.</p>
+                <p>Some risk is necessary to outpace inflation and preserve purchasing power.</p>
+              </div>
+            </div> 
+      <JoinForm />
     </div>
   );
 };
 
 export default Investing;
+

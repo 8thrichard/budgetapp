@@ -38,6 +38,7 @@ const JoinForm: React.FC = () => {
 
   return (
     <div className='join-main'>
+      <h3>Join Our Investing Newsletter</h3>
       <form onSubmit={handleSubmit}>
         <div className='join-form-group'>
           <input
