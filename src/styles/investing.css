@@ -23,7 +23,7 @@
     position: relative;
     z-index: 2;
     max-width: 960px;
-    top: -15px;
+    top: -5px;
 }
 
 .investing-content h2 {
@@ -39,13 +39,13 @@
     line-height: 1.5;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
     .investing-content {
         margin: 10px;
     }
 
     .stock-data {
-        max-width: 89%;
+        max-width: 80%;
         top: -16px;
     }
 }
