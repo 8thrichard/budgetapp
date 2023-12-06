@@ -5,6 +5,18 @@
       "emailAddress": "richboam8@icloud.com",
       "userMessage": "This is for testing Purposes",
       "id": 1
+    },
+    {
+      "fullName": "Richard",
+      "emailAddress": "richboam8@icloud.com",
+      "userMessage": "Richard is testing this server. It is not easy!",
+      "id": 2
+    },
+    {
+      "fullName": "Richard",
+      "emailAddress": "richboam8@icloud.com",
+      "userMessage": "Richard is testing this through vercel hosting app\n",
+      "id": 3
     }
   ]
 }
