@@ -30,7 +30,7 @@ Managing personal finances is crucial for achieving financial goals and maintain
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/budget-app.git
+   git clone https://github.com/8thrichard/budgetapp.git
 2. Change Directory
 
       ```bash
