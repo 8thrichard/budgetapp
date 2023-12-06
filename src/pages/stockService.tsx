@@ -29,13 +29,15 @@ export const fetchStockData = async (symbol: string, apiKey: string) => {
 
     // Check if the API response contains an error message.
     if (data['Error Message']) {
-      throw new Error(`Alpha Vantage API Error: ${data['Error Message']}`);
+      const apiErrorMessage = `Alpha Vantage API Error: ${data['Error Message']}`;
+      throw new Error(apiErrorMessage);
     }
 
     // Return the 'Global Quote' data.
     return data['Global Quote'];
   } catch (error: any) {
     // If any error occurs during the process, throw an error with a descriptive message.
-    throw new Error(`Failed to fetch stock data: ${error.message}`);
+    const errorMessage = `Failed to fetch stock data: ${error.message}`;
+    throw new Error(errorMessage);
   }
 };
