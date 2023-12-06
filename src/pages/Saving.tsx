@@ -2,6 +2,7 @@ import React from 'react';
 import StockData from './StockData';
 import '../styles/saving.css';
 
+// TSX structure representing the Savings Page.
 const Saving: React.FC = () => {
   return (
     <div>

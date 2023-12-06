@@ -1,6 +1,15 @@
 import React from 'react';
 
+
+/**
+ * NotFound Page
+ * A React functional component representing a 404 Not Found page.
+ *
+ * @returns TSX element representing the NotFound component.
+ */
+
 const NotFound: React.FC = () => {
+    // TSX structure representing the NotFound component.
   return (
     <div
       style={{

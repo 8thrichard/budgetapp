@@ -3,7 +3,7 @@ import JoinForm from './JoinForm';
 import '../styles/investing.css'; 
 import StockData from './StockData';
 
-
+  // TSX structure representing the INVESTING Page
 const Investing: React.FC = () => {
 
   return (

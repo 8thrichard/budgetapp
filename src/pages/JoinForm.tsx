@@ -3,12 +3,24 @@ import { useMutation, useQueryClient } from 'react-query';
 import '../styles/forms.css';
 import axios from 'axios';
 
+/**
+ * JoinForm Component
+ * A React functional component representing a form to join an investing newsletter.
+ * Uses react-query for asynchronous form submission.
+ * @returns TSX element representing the JoinForm component.
+ */
+
 const JoinForm: React.FC = () => {
   const queryClient = useQueryClient();
 
+  // React-query useMutation hook for handling form submission
   const mutation = useMutation(
+
+        // Function that sends a POST request to the server with new submission data
     (newSubmission: any) => axios.post('http://localhost:5000/submissions', newSubmission),
     {
+      
+      // Callback function executed on successful form submission
       onSuccess: () => {
         // Invalidate and refetch data to update the UI with the new submission
         queryClient.invalidateQueries('submissions');
@@ -16,19 +28,23 @@ const JoinForm: React.FC = () => {
     }
   );
 
+    // Local state for form data
   const [formData, setFormData] = useState({
     joinFullName: '',
     joinEmailAddress: '',
     joinUserMessage: '',
   });
 
+    // Event handler for input and textarea changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+    // Event handler for form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+        // Trigger the mutation to submit the form data
     await mutation.mutateAsync({
       fullName: formData.joinFullName,
       emailAddress: formData.joinEmailAddress,
@@ -36,6 +52,7 @@ const JoinForm: React.FC = () => {
     });
   };
 
+    // TSX structure representing the JoinForm component
   return (
     <div className='join-main'>
       <h3>Join Our Investing Newsletter</h3>

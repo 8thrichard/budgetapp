@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Financial.css';
 
-
+// TSX structure representing the FinancialWellness Page
 const FinancialWellness: React.FC = () => {
   return (
     <div className="finance-main">
